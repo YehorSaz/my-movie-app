@@ -1,0 +1,11 @@
+.Header {
+    display: flex;
+    background: green;
+    height: 10vh;
+
+    justify-content: space-between;
+}
+
+.logo {
+background: gold;
+}
