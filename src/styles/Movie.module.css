@@ -1,4 +1,103 @@
-.Movie {
-    background: gold;
-    width: 20%;
+.Movie , .movie {
+    min-width: 120px;
+    display: flex;
+    width: 17vw;
+    height: 20vh;
+    border: 1px solid silver;
+    border-radius: .3rem;
+    background: linear-gradient(179deg, #cdf0ff 0%, #c5cde3 100%);
+    padding-bottom: 2%;
+    box-shadow: 0px 0px 5px 1px #9fe7d3;
+    transition: 0.3s;
+    font-family: "Book Antiqua";
+}
+.Movie:hover {
+    box-shadow: 0px 0px 5px 4px #b7d0e8;
+    scale: 1.03;
+    transition: 0.3s;
+}
+
+.votes {
+    display: flex;
+    margin-left: 10%;
+    position: relative;
+    top: 10%;
+    font-size: .7em;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    font-size: .5em;
+    padding: 2%;
+}
+.poster_title {
+    display: flex;
+    height: 75%;
+    color: #090808;
+
+}
+.img_movie {
+    border-radius: .2rem;
+    height: 95%;
+}
+a {
+    width: 100%;
+    height: 100%;
+}
+.title {
+    margin-left: 5%;
+    text-align: center;
+}
+.overview {
+    display: flex;
+    font-size: .7em;
+    overflow-y: hidden;
+    height: 27%;
+    color: #090808;
+}
+.overview:hover {
+    overflow-y: scroll;
+}
+
+.overview:hover::-webkit-scrollbar {
+    width: 2px;
+}
+
+.overview:hover::-webkit-scrollbar-thumb {
+    background-color: #b8a9bc;
+    border-radius: 10px;
+}
+
+.rating_body {
+    position: relative;
+    margin-left: 10%;
+    padding-bottom: 5%;
+    margin-top: 10%;
+}
+.rating_body:before {
+    content: "★★★★★★★★★★";
+    display: block;
+    color: #5d5d51;
+}
+.rating_active {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.rating_active:before {
+    content: "★★★★★★★★★★";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: rgb(246, 196, 100);
+}
+.span {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

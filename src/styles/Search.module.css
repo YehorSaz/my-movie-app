@@ -10,19 +10,25 @@
     justify-content: center;
     align-items: center;
     transform: scale(1);
-
+    transition: 1s;
 
 }
-
+.content::-webkit-scrollbar {
+    width: 0;
+}
 .active {
    display: none;
+
+    transition: 1s;
 }
 
 .content {
     padding: 10px;
-    border-radius: 1rem;
-    background-color: whitesmoke;
+    border-radius: .5rem;
+    background: linear-gradient(179deg, #cdf0ff 0%, #c5cde3 100%);
     width: 400px;
     height: 300px;
     overflow-y: scroll;
+    z-index: 11;
+    transition: 1s;
 }
