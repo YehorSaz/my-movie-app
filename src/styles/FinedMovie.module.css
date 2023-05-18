@@ -4,45 +4,52 @@
     width: 100%;
     margin-bottom: 5px;
     border-bottom: 1px solid #8dcde5;
-    padding-bottom: 5px;
+    padding-bottom: 13px;
 }
 
 .info {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     padding: 0 5% 0 2%;
     color: #504a4a;
-    font-family: "Book Antiqua";
+    font-family: "Book Antiqua", serif;
+    box-shadow: 3px 2px 8px 1px #a7c2e1;
+    border-radius: .3rem;
+    gap: 5%;
 }
 .img_fined {
-    height: 100%;
-    max-width: 70px;
-    border-radius: .1rem;
+    border-radius: .3rem;
+    box-shadow: 3px 2px 8px 1px #8ca8cc;
 }
 .title {
-    font-size: 1em;
+    font-size: 1.3em;
 }
 .overview {
-    font-size: .3em;
+    font-size: 0.8em;
     overflow-y: hidden;
 }
 
-
+.rating {
+    display: flex;
+    font-size: 1em;
+}
 .rating_body {
     position: relative;
 }
 .rating_body:before {
     content: "★★★★★★★★★★";
     display: block;
-    color: #252521;
+    color: #5d5d51;
+    text-shadow: 1px 1px 5px #36606c;
 }
 .rating_active {
     position: absolute;
-    width: 100%;
+    width: 0%;
     height: 100%;
     top: 0;
-    left: 0;
+    left: 0%;
     overflow: hidden;
 }
 .rating_active:before {
@@ -51,5 +58,5 @@
     height: 100%;
     top: 0;
     left: 0;
-    color: rgb(210, 210, 0);
+    color: rgb(203, 201, 95);
 }

@@ -3,31 +3,30 @@ import React, {FC, useEffect} from 'react';
 import {useLocation} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../hooks";
 import {movieActions} from "../redux/slice";
-import {MovieListCard} from "../components/MoviesComponents";
+import {MovieInfo} from "../components/MoviesComponents";
 
 
 
 const DetailsPage: FC = () => {
 
     const location = useLocation();
-    console.log(location.state);
+    console.log(location);
+    const backDropPath = location.state.backdrop_path;
 
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(movieActions.getById(location.state))
+        dispatch(movieActions.getById(location.state.id))
     }, [dispatch]);
 
-    const {movieDetails, finedMovies} = useAppSelector(state => state.movieReducer)
-    console.log(finedMovies);
+    const {movieDetails} = useAppSelector(state => state.movieReducer)
+
     return (
 
         <div>
-
-            details page 123
             {
                 movieDetails && (
-                    <MovieListCard movieDetails={movieDetails}/>
+                    <MovieInfo movieDetails={movieDetails} backDropPath={backDropPath}/>
                 )
             }
         </div>

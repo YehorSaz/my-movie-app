@@ -2,22 +2,32 @@
     display: flex;
     background: linear-gradient(183deg, #306188 0%, #123236 85%);
     height: 7vh;
-    width: 100vw;
     justify-content: space-between;
     align-items: center;
+    padding: 0 8% 0 8%;
 }
 
+.user {
+    display: flex;
+    justify-content: space-between;
+    width: 12%;
+    align-items: center;
+}
+.user > svg:hover {
+    cursor: pointer;
+}
 .img_okten {
     display: block;
     height: 70%;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-right: 3%;
 }
-.text {
+.text, .user, .genres {
     color: blanchedalmond;
+    font-size: 1.7em;
 }
-.text:hover {
-    text-shadow: 2px 0px 14px #00E5FF;
+.text:hover, .user:hover, .genres:hover {
+    text-shadow: 2px 0 14px #00E5FF;
+    cursor: pointer;
 }
 
 .logo {
@@ -28,19 +38,24 @@
 .search {
     display: flex;
     align-items: center;
-    height: 50%;
-    width: 20vw;
+    height: 40%;
+    width: 23vw;
     position: relative;
-    left: 12.5%;
+    left: 13%;
 }
 .input {
     height: 100%;
-    border-radius: .5rem;
+    width: 100%;
+    border-radius: .7rem;
     border: none;
     background-color: #485e77;
     padding-left: 5%;
     color: #80b5d2;
-    font-size: .7em;
+    font-size: 1em;
+}
+.input:hover{
+    box-shadow: 2px 3px 8px 2px #113b4f;
+
 }
 .input:active, :hover, :focus {
     outline: 0;
@@ -48,21 +63,24 @@
 }
 ::placeholder {
     color: #718494;
-    font-size: .7em;
+    font-size: 1em;
 }
 
 .button {
     height: 100%;
+    width:calc(25%/2);
     border: none;
     border-radius: 25px;
     background: rgba(0,0,0,0);
     position: relative;
     right: 10%;
-    top: 6%;
     cursor: pointer;
+    overflow: hidden;
+    scale: 0.8;
 }
 .button > svg {
     color: #1b3334;
+    scale: 3.5;
 }
 .link {
     width: 30%;

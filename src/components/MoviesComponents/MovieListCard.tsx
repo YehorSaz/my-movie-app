@@ -1,32 +1,60 @@
 import React, {FC} from 'react';
-import {getPoster} from "../../constants";
-import {IMovieDetails} from "../../interfaces";
+import {Link} from "react-router-dom";
 
-interface IProps {
-    movieDetails: IMovieDetails;
+import {IMovie} from "../../interfaces";
+import {getPosterSmall} from "../../constants";
+import css from "../../styles/MovieListCard.module.css"
+
+
+interface IProp {
+    movie: IMovie
 }
 
-const MovieListCard: FC<IProps> = ({movieDetails}) => {
+const MovieListCard: FC<IProp> = ({movie}) => {
 
-    const {original_title, overview, poster_path} = movieDetails;
+    const {title, id, poster_path, overview, vote_count, vote_average} = movie;
+
 
     return (
 
-        <div>
-            Movie Card
-            <div>
 
-                <div>
-                    <div>{original_title}</div>
-                    <div>{overview}</div>
-                    <img src={getPoster + poster_path} alt="poster" width={'150px'} height={'200px'}/>
+        <Link to={id.toString()} state={{...movie}}>
+            <div className={css.Movie}>
+
+                <div className={css.inner}>
+                    <div className={css.poster_title}>
+
+                        <img className={css.img_movie} src={getPosterSmall + poster_path} alt="poster"/>
+
+                        <span className={css.span}>
+
+                            <div className={css.title}>
+                                {title}
+                            </div>
+
+                            <div className={css.votes}>
+                                average: {vote_average}
+                            </div>
+
+
+                            <div className={css.rating}>
+                                <div className={css.rating_body}>
+                                    <div className={css.rating_active} style={{width: vote_average / 0.1 + '%' }}></div>
+                                </div>
+                            </div>
+                            <hr className={css.line}/>
+                    <div className={css.overview}>
+                        {overview}
+                    </div>
+                        </span>
+
+                    </div>
+
+
+
                 </div>
-
-
-
-
             </div>
-        </div>
+        </Link>
     );
 };
 

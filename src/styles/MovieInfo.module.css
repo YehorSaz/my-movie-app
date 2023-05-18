@@ -1,0 +1,11 @@
+.wrapper {
+    width: 100vw;
+    height: 93vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.background_filter {
+    height: 93vh;
+    background-color: rgba(53, 76, 101, 0.5);
+    background-size: cover;
+}

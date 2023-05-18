@@ -2,7 +2,7 @@ import React, {FC, useEffect} from 'react';
 
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieActions} from "../../redux/slice";
-import {Movie} from "./Movie";
+import {MovieListCard} from "./MovieListCard";
 import css from "../../styles/MovieList.module.css";
 
 
@@ -26,7 +26,7 @@ const MovieList: FC = () => {
             <div className={css.movieList}>
 
                 {
-                    movies.map(movie => <Movie key={movie.id} movie={movie}/>)
+                    movies.map(movie => <MovieListCard key={movie.id} movie={movie}/>)
                 }
 
             </div>

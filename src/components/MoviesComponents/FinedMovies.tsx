@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {Link} from "react-router-dom";
 
 import {IMovie} from "../../interfaces";
-import {getLogo} from "../../constants";
+import {getPosterSmall} from "../../constants";
 import {useAppDispatch} from "../../hooks";
 import {movieActions} from "../../redux/slice";
 import css from '../../styles/FinedMovie.module.css';
@@ -17,7 +17,7 @@ const FinedMovies: FC<IProps> = ({movie}) => {
     const dispatch = useAppDispatch();
 
     const {title, id, poster_path, overview, vote_count, vote_average} = movie;
-    const poster = poster_path ? getLogo + poster_path : 'https://owu.com.ua/image/logo/webp/Blue-Big-Bird-Final-Logo.webp';
+    const poster = poster_path ? getPosterSmall + poster_path : 'https://owu.com.ua/image/logo/webp/Blue-Big-Bird-Final-Logo.webp';
 
     return (
 
