@@ -1,0 +1,45 @@
+.paginate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 50%;
+    padding-top: 3%;
+    color: #306188;
+}
+
+.items {
+    display: block;
+    border-radius: 20px;
+    font-size: 2em;
+    cursor: pointer;
+    margin: 0 15% 0 15%;
+
+}
+
+li {
+    list-style-type: none;
+}
+
+.active {
+    font-size: 1.3em;
+    color: #204664;
+    text-decoration: underline #204664;
+}
+
+.prev, .next {
+    font-size: 1.6em;
+    color: #306188;
+
+}
+
+.next:hover {
+    cursor: pointer;
+    color: #204664;
+    text-decoration: underline;
+}
+.prev:hover {
+    cursor: pointer;
+    color: #204664;
+    text-decoration: underline;
+}

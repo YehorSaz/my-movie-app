@@ -27,3 +27,9 @@
     z-index: 11;
     transition: 1s;
 }
+.nothing {
+   margin: 15% 40% 0 40%;
+    z-index: 12;
+    font-size: 2em;
+    color: #306188;
+}

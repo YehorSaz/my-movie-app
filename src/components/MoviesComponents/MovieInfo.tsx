@@ -11,7 +11,7 @@ interface IProps {
 }
 
 const MovieInfo: FC<IProps> = ({movieDetails, backDropPath}) => {
-    console.log(backDropPath, '---------');
+
 
     const {original_title, overview, poster_path} = movieDetails;
 

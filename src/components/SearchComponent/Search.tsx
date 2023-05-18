@@ -12,10 +12,17 @@ const Search: FC = () => {
 
     return (
 
-        <div className={trigger ? css.Search : css.active} onClick={() => dispatch(movieActions.changeTrigger())}>
+        <div className={trigger ? css.Search : css.active} onClick={() => {
+            dispatch(movieActions.changeTrigger())
+            document.querySelector<HTMLInputElement>('#search').value = ''
+        }}>
             <div className={css.content} onClick={event => event.stopPropagation()}>
+
                 {
+                    finedMovies.length ?
                     finedMovies.map(movie => <FinedMovies key={movie.id} movie={movie}/>)
+                        :
+                    <div className={css.nothing}>nothing yet...</div>
                 }
             </div>
 

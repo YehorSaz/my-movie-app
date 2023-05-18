@@ -21,11 +21,11 @@ const initialState: IState = {
     trigger: false
 };
 
-const getAll = createAsyncThunk<IResult, void>(
+const getAll = createAsyncThunk<IResult, number>(
     'movieSlice/getAll',
-    async (_, {rejectWithValue}) => {
+    async (page, {rejectWithValue}) => {
         try {
-            const {data} = await movieService.getAll();
+            const {data} = await movieService.getAll(page);
             return data
         } catch (e) {
             const err = e as AxiosError

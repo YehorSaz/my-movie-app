@@ -19,11 +19,12 @@ const FinedMovies: FC<IProps> = ({movie}) => {
     const {title, id, poster_path, overview, vote_count, vote_average} = movie;
     const poster = poster_path ? getPosterSmall + poster_path : 'https://owu.com.ua/image/logo/webp/Blue-Big-Bird-Final-Logo.webp';
 
+
     return (
 
-        <Link to={`/movies/${id.toString()}`} state={id} onClick={() => dispatch(movieActions.changeTrigger())}>
+        <Link to={`/movies/${id.toString()}`} state={{...movie}} onClick={() => dispatch(movieActions.changeTrigger())}>
 
-            <div className={css.wrapper}>
+                <div className={css.wrapper}>
 
                 <img className={css.img_fined} src={poster} alt="logo"/>
 
