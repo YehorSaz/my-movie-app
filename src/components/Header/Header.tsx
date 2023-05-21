@@ -12,6 +12,13 @@ import {Search} from "../SearchComponent";
 
 const Header: FC = () => {
 
+   if (localStorage?.theme === 'dark') {
+      window.onload = function () {
+          document.querySelector<HTMLInputElement>('#checkBox').checked = true;
+          document.body.setAttribute('dark', '');
+      }
+   }
+
     const dispatch = useAppDispatch();
     const [query, setQuery] = useState<string>("")
     const debounce = useDebounce(query, 500)
@@ -29,10 +36,12 @@ const Header: FC = () => {
     const HandleChange = (isChecked: boolean) => {
         if (isChecked) {
             document.body.setAttribute('dark', '');
-            document.body.removeAttribute('white');
+            document.body.removeAttribute('light');
+            localStorage.setItem('theme', 'dark');
         } else {
             document.body.setAttribute('white', '');
             document.body.removeAttribute('dark');
+            localStorage.setItem('theme', 'light')
         }
     }
 
@@ -53,8 +62,8 @@ const Header: FC = () => {
             </div>
 
             <div className={css.theme}>
-                Dark
-                <input className={css.checkbox} type="checkbox"
+                Dark/Light
+                <input id={'checkBox'} className={css.checkbox} type="checkbox"
                        onChange={(event) => HandleChange(event.currentTarget.checked)}/>
             </div>
 
