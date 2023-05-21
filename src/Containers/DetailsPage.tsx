@@ -1,10 +1,9 @@
 import React, {FC, useEffect} from 'react';
-
 import {useLocation} from "react-router-dom";
+
 import {useAppDispatch, useAppSelector} from "../hooks";
 import {movieActions} from "../redux/slice";
 import {MovieInfo} from "../components/MoviesComponents";
-
 
 
 const DetailsPage: FC = () => {
@@ -18,8 +17,8 @@ const DetailsPage: FC = () => {
         dispatch(movieActions.getById(location.state.id))
     }, [dispatch, location.state]);
 
-    const {movieDetails, trigger} = useAppSelector(state => state.movieReducer)
-    console.log(trigger);
+    const {movieDetails} = useAppSelector(state => state.movieReducer)
+
     return (
 
         <div>

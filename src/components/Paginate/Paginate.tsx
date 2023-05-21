@@ -1,28 +1,29 @@
 import React, {FC, useEffect, useRef} from 'react';
 import ReactPaginate from 'react-paginate';
+import {useLocation} from "react-router-dom";
 
 import css from '../../styles/Paginate.module.css';
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieActions} from "../../redux/slice";
-import {useLocation} from "react-router-dom";
-
 
 
 export interface IGetGenre {
 
-        genresId: any,
-        page: number
+    genresId: any,
+    page: number
 
 }
+
 const Paginate: FC = () => {
 
-const {state} = useLocation();
+    const {state} = useLocation();
 
     const {total_page} = useAppSelector(state => state.movieReducer)
     const dispatch = useAppDispatch();
-    const page = useRef(1);
-    const pageCount = total_page;
 
+    const page = useRef(1);
+
+    const pageCount = total_page;
 
     useEffect(() => {
         page.current = 1
@@ -30,12 +31,15 @@ const {state} = useLocation();
 
 
     const handlePageClick = ({selected}: { selected: number }) => {
+
         page.current = selected + 1;
-        if (state !== null){
+
+        if (state !== null) {
             let payload = {
                 genresId: state.id,
                 page: page.current
             }
+
             dispatch(movieActions.getGenresById(payload))
         } else {
             dispatch(movieActions.getAll(page.current))

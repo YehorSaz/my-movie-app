@@ -24,7 +24,7 @@ const FinedMovies: FC<IProps> = ({movie}) => {
 
         <Link to={`movies/${id.toString()}`} state={{...movie}} onClick={() => dispatch(movieActions.changeTrigger())}>
 
-                <div className={css.wrapper}>
+            <div className={css.wrapper}>
 
                 <img className={css.img_fined} src={poster} alt="logo"/>
 
@@ -35,16 +35,17 @@ const FinedMovies: FC<IProps> = ({movie}) => {
                     </div>
 
                     <div className={css.rating}>
-                                <div className={css.rating_body}>
-                                    <div className={css.rating_active} style={{width: vote_average / 0.1 + '%'}}>
-                                        {vote_count}
-                                    </div>
-                                </div>
+                        <div className={css.rating_body}>
+                            <div className={css.rating_active} style={{width: vote_average / 0.1 + '%'}}>
+                                {vote_count}
                             </div>
+                        </div>
+                    </div>
 
                     <div className={css.overview}>
                         {overview}
                     </div>
+
                 </span>
 
             </div>

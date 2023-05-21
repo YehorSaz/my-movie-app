@@ -4,6 +4,7 @@ function useDebounce(value: any, delay: number) {
     const [debouncedValue, setDebouncedValue] = useState(value);
 
     useEffect(() => {
+
         const handler = setTimeout(() => {
             setDebouncedValue(value);
         }, delay);
@@ -12,7 +13,8 @@ function useDebounce(value: any, delay: number) {
             clearTimeout(handler);
         }
     }, [value, delay]);
+
     return debouncedValue;
 }
 
-export  {useDebounce}
+export {useDebounce}

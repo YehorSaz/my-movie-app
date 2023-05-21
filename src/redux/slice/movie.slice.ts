@@ -3,8 +3,7 @@ import {createAsyncThunk, createSlice, isRejectedWithValue} from "@reduxjs/toolk
 import {movieService} from "../../services/movie.service";
 import {AxiosError} from "axios";
 import {IGetGenre} from "../../components/Paginate";
-
-
+import {IVideo, IVideoRes} from "../../interfaces/Video.interface";
 
 
 interface IState {
@@ -14,7 +13,8 @@ interface IState {
     finedMovies: IMovie[],
     trigger: boolean,
     genres: IGenres[],
-    total_page: number
+    total_page: number,
+    video: IVideoRes[]
 }
 
 const initialState: IState = {
@@ -24,8 +24,22 @@ const initialState: IState = {
     finedMovies: [],
     trigger: false,
     genres: [],
-    total_page: 0
+    total_page: 0,
+    video: []
 };
+
+const getVideos = createAsyncThunk<IVideo, number>(
+    'movieSlice/getVideos',
+    async (id, {rejectWithValue}) => {
+        try {
+            const {data} = await movieService.getVideo(id);
+            return data
+        } catch (e) {
+            const err = e as AxiosError
+            return rejectWithValue(err?.response?.data)
+        }
+    }
+)
 
 const getGenres = createAsyncThunk<IGenres, void>(
     'movieSlice/getGenres',
@@ -63,7 +77,7 @@ const getGenresById = createAsyncThunk<IResult, IGetGenre>(
             const err = e as AxiosError
             return rejectWithValue(err?.response?.data)
         }
-}
+    }
 )
 
 
@@ -119,6 +133,10 @@ const slice = createSlice({
             })
             .addCase(getGenresById.fulfilled, (state, action) => {
                 state.movies = action.payload.results
+                state.total_page = action.payload.total_pages
+            })
+            .addCase(getVideos.fulfilled, (state, action) => {
+                state.video = action.payload.results
             })
             .addMatcher(isRejectedWithValue(), (state, action) => {
                 state.errors = action.payload
@@ -135,7 +153,8 @@ const movieActions = {
     getById,
     findByName,
     getGenres,
-    getGenresById
+    getGenresById,
+    getVideos
 }
 
 export {

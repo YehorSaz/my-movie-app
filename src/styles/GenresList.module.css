@@ -1,6 +1,7 @@
 .wrapper {
     display: grid;
     justify-content: center;
+    color: var(--var-paginate-color);
 }
 
 .genres_name {
@@ -8,4 +9,5 @@
     grid-template-columns: repeat(7, 1fr);
     gap: 2%;
     margin-top: 1%;
+    color: var(--var-paginate-color);
 }

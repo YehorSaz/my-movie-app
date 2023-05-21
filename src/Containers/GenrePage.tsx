@@ -1,11 +1,10 @@
 import React from 'react';
+import {useLocation} from "react-router-dom";
 
 import css from '../styles/GenresPage.module.css';
 import {GenresList} from "../components/Genres";
 import {MovieList} from "../components/MoviesComponents";
 import {Paginate} from "../components/Paginate";
-import {useLocation} from "react-router-dom";
-
 
 
 const GenrePage = () => {
@@ -18,7 +17,8 @@ const GenrePage = () => {
 
                 <GenresList/>
 
-                <div>
+                <div className={css.top}>
+
                     <div className={css.paginate}>
                         {
                             state && (<h1 className={css.name}>{state.name}</h1>)
@@ -28,11 +28,13 @@ const GenrePage = () => {
                     <div className={css.paginate_numbers}>
                         <Paginate/>
                     </div>
+
                 </div>
 
                 <MovieList/>
 
-                <div>
+                <div className={css.bottom}>
+
                     <div className={css.paginate}>
                         {
                             state && (<h1 className={css.name}>{state.name}</h1>)
@@ -43,6 +45,7 @@ const GenrePage = () => {
                         <Paginate/>
                     </div>
                 </div>
+
 
             </div>
         </>

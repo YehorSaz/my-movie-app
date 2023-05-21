@@ -11,9 +11,14 @@ const MoviePage: FC = () => {
     return (
 
         <div className={css.body}>
+
             <Paginate/>
             <MovieList/>
-            <div className={css.paginate_bottom}><Paginate/></div>
+
+            <div className={css.paginate_bottom}>
+                <Paginate/>
+            </div>
+
         </div>
     );
 };

@@ -2,10 +2,14 @@
     width: 10vw;
     font-size: 1.2em;
     font-family: "Book Antiqua", serif;
-    color: #25335e;
+    color: var(--var-paginate-color);
 }
 .name:hover {
     cursor: pointer;
     text-decoration: underline;
-    text-shadow: 0 3px 5px #839498;
+    text-shadow: var(--var-genres-name-shadow);
+    color: var(--var-paginate-color);
+}
+.name_link {
+    color: var(--var-num-color);
 }

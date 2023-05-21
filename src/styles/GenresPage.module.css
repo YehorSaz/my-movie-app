@@ -17,10 +17,16 @@
     display: block;
     width: 10vw;
     height: 10vh;
-    /*padding-left: 200px;*/
-    /*padding-top: 55px;*/
     text-shadow: var(--var-paginate-shadow);
     color: var(--var-paginate-color);
     z-index: 5;
     text-decoration: underline;
+}
+
+.name_link {
+    color: var(--var-paginate-color);
+}
+.bottom {
+    position: relative;
+    bottom: 60px;
 }

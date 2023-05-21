@@ -1,66 +1,61 @@
+
 .Header {
-    /*width: 100vw;*/
+    width: 100%;
     display: flex;
-    background: var(--var-header-bg);
+    justify-content: center;
     height: 7vh;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 100px 0 50px;
+    background: var(--var-header-bg);
 }
 
-.user {
+.header_left {
+    display: block;
+    width: 17vw;
+    min-width: 223px;
+    padding-left: 40px;
+}
+
+.logo {
+    height: 100%;
     display: flex;
-    justify-content: space-between;
-    width: 150px;
+    min-width: 200px;
     align-items: center;
+    gap: 5px;
 }
-.genres {
-    margin-left: 120px;
-}
-
-.user > svg:hover {
-    cursor: pointer;
-}
-
 .img_okten {
     display: block;
     height: 70%;
-    margin-right: 3%;
+}
+
+.theme {
+    display: flex;
+    gap: 5px;
+    position: relative;
+    top: 4px;
+    width: 30vw;
+    font-size: 1em;
+    align-self: center;
+    padding-left: 10px;
+    color: var(--var-link-color);
+}
+
+
+
+.genres {
+    width: 15vw;
+    align-self: center;
 }
 
 .genres_link {
     color: var(--var-link-color);
-    margin-left: 50%;
-}
-.text, .user, .genres {
-    color: var(--var-link-color);
-    font-size: 1.7em;
-}
-
-.text:hover, .user:hover, .genres:hover {
-    text-shadow: var(--var-link-hover-shadow);
-    cursor: pointer;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    height: 100%;
 }
 
 .search {
-    display: flex;
-    align-items: center;
-    height: 40%;
-    width: 23vw;
-    position: relative;
-    left: 13%;
-    margin-left: -30px;
+    width: 20vw;
+    align-self: center;
 }
-
 .input {
     height: 100%;
-    width: 100%;
+    width: 80%;
     border-radius: .7rem;
     border: none;
     background-color: var(--var-input-bg);
@@ -69,7 +64,6 @@
     font-size: 1em;
     z-index: 11;
 }
-
 .input:hover {
     box-shadow: var(--var-input-hover-shadow);
 }
@@ -83,30 +77,50 @@
     color: var(--var-input-playsholder);
     font-size: 1em;
 }
-
 .button {
     height: 100%;
-    width: calc(25% / 2);
     border: none;
     border-radius: 25px;
     background: rgba(0, 0, 0, 0);
     position: relative;
-    right: 10%;
+    right: 20px;
+    top: 3px;
     cursor: pointer;
     overflow: hidden;
-    scale: 0.8;
+    scale: 1.2;
     z-index: 11;
 }
-
 .button > svg {
     color: var(--var-button-svg-color);
-    scale: 3;
+
 }
 
-.link {
-    width: 30%;
+
+.user {
+    display: flex;
+    width: 20vw;
+    min-width: 145px;
+    color: var(--var-link-color);
+    align-self: center;
+    gap: 10px;
+    padding-left: 120px;
+}
+.user:hover {
+    cursor: pointer;
+}
+.user > svg {
+    min-width: 25px;
+}
+.user > svg:hover {
+    cursor: pointer;
 }
 
+.text, .user, .genres {
+    color: var(--var-link-color);
+    font-size: 25px;
+}
 .search_component {
     z-index: 10;
 }
+
+

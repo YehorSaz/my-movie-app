@@ -1,11 +1,12 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
+import {Link} from "react-router-dom";
 
 import {getBackDrop, getPoster} from "../../constants";
 import {IGenres, IMovieDetails} from "../../interfaces";
 import css from '../../styles/MovieInfo.module.css';
-import {Link, useLocation} from "react-router-dom";
 import {PosterPreview} from "../PosterPreview";
-
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {movieActions} from "../../redux/slice";
 
 
 interface IProps {
@@ -13,20 +14,39 @@ interface IProps {
     backDropPath: IMovieDetails;
 }
 
-const MovieInfo: FC<IProps> = ({movieDetails, backDropPath}) => {
+const MovieInfo: FC<IProps> = ({movieDetails}) => {
 
+    const {video} = useAppSelector(state => state.movieReducer);
 
-    const {original_title, overview, poster_path, genres, tagline, vote_average, status, title, release_date, backdrop_path} = movieDetails;
+    const dispatch = useAppDispatch();
+    const {
+        original_title,
+        overview,
+        poster_path,
+        genres,
+        tagline,
+        vote_average,
+        status,
+        title,
+        release_date,
+        backdrop_path,
+        id
+    } = movieDetails;
+
     let genresArr: IGenres[] = [];
     genres.map(item => genresArr.push(item));
     const vote_av: any = vote_average;
 
+    useEffect(() => {
+        dispatch(movieActions.getVideos(id))
+    }, [dispatch, id]);
 
 
     return (
 
         <div className={css.wrapper} style={backdrop_path ? {backgroundImage: `url(${getBackDrop + backdrop_path})`} :
             {backgroundImage: `url(${getBackDrop + poster_path})`}}>
+
             <div className={css.background_filter}>
 
                 <div className={css.container}>
@@ -46,14 +66,24 @@ const MovieInfo: FC<IProps> = ({movieDetails, backDropPath}) => {
                             <div className={css.tag_line}><h2>{tagline}</h2></div>
                         </div>
 
+                        <div className={css.video}>
+                            <iframe width="560" height="315"
+                                    src={video[0] ? `https://www.youtube.com/embed/${video[0].key}` : getPoster + poster_path}
+                                    title="YouTube video player"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen></iframe>
+                        </div>
 
                         <div className={css.rating_container}>
+
                             <div>{vote_average}</div>
+
                             <div className={css.ratingD}>
 
                                 <div className={css.rating_bodyD}>
                                     <div className={css.rating_activeD} style={{width: vote_av / 0.1 + '%'}}></div>
                                 </div>
+
                             </div>
                         </div>
 
@@ -69,7 +99,6 @@ const MovieInfo: FC<IProps> = ({movieDetails, backDropPath}) => {
                                         </Link>
                                     </div>
                                 )
-
                             }
                         </div>
                         <div className={css.overview_container}>

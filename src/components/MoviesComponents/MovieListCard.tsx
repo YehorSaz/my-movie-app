@@ -22,6 +22,7 @@ const MovieListCard: FC<IProp> = ({movie}) => {
             <div className={css.Movie}>
 
                 <div className={css.inner}>
+
                     <div className={css.poster_title}>
 
                         <img className={css.img_movie} src={getPosterSmall + poster_path} alt="poster"/>
@@ -39,19 +40,19 @@ const MovieListCard: FC<IProp> = ({movie}) => {
 
                             <div className={css.rating}>
                                 <div className={css.rating_body}>
-                                    <div className={css.rating_active} style={{width: vote_average / 0.1 + '%' }}></div>
+                                    <div className={css.rating_active} style={{width: vote_average / 0.1 + '%'}}></div>
                                 </div>
-
                             </div>
+
                             <div className={css.release}>{release_date}</div>
 
-                    <div className={css.overview}>
-                        {overview}
-                    </div>
+                            <div className={css.overview}>
+                                {overview}
+                            </div>
+
                         </span>
 
                     </div>
-
 
 
                 </div>

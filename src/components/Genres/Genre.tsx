@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
+import {Link} from "react-router-dom";
 
 import css from '../../styles/Genre.module.css';
 import {IGenres} from "../../interfaces";
-import {Link} from "react-router-dom";
-;
+
 
 
 interface IProps {
@@ -19,7 +19,7 @@ const Genre: FC<IProps> = ({genre}) => {
 
         <div className={css.name}>
             <Link to={name.toString()} state={{...genre}}>
-                {name}
+                <div className={css.name_link}>{name}</div>
             </Link>
         </div>
     );

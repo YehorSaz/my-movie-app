@@ -1,11 +1,11 @@
 import React, {FC, useEffect} from 'react';
+import {useLocation} from "react-router-dom";
 
 import {useAppDispatch, useAppSelector} from "../../hooks";
 
 import {MovieListCard} from "./MovieListCard";
 import css from "../../styles/MovieList.module.css";
 import {IGetGenre} from "../Paginate";
-import {useLocation} from "react-router-dom";
 import {movieActions} from "../../redux/slice";
 
 
