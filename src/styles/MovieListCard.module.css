@@ -1,17 +1,17 @@
 .Movie , .movie {
-    min-width: 305px;
+    background: var(--var-card-bg);
+    min-width: 325px;
     display: flex;
-    width: 20vw;
-    height: 20vh;
+    width: 22vw;
+    height: 23vh;
     border-radius: .3rem;
-    background: linear-gradient(179deg, #cdf0ff 0%, #c5cde3 100%);
     box-shadow: 0 0 5px 1px #abd2ea;
     transition: 0.3s;
-    font-family: "Book Antiqua", serif;
+
 }
 
 .Movie:hover {
-    box-shadow: 0 0 7px 8px #b7d0e8;
+    box-shadow: var(--var-list-shadow-hover);
     transition: 0.3s;
 }
 
@@ -31,13 +31,16 @@
 .poster_title {
     display: flex;
     height: 100%;
-    color: #090808;
-
+    color: var(--var-list-title-color);
+    perspective: 300px;
 }
 .img_movie {
     border-radius: .2rem;
     height: 100%;
-    box-shadow: 1px 0px 8px 3px #87a5c0;
+    box-shadow: var(--var-list-img-shadow);
+    scale: 1.02;
+    transform: rotateX(0deg) rotateY(2deg);
+    transform-style: preserve-3d;
 }
 a {
     width: 100%;
@@ -46,14 +49,14 @@ a {
 .title {
     text-align: center;
     font-size: 1.1em;
-    text-shadow: 0px 3px 5px #839498;
+    text-shadow: var(--var-list-title-shadow)
 }
 .overview {
     display: flex;
     font-size: .7em;
     overflow-y: hidden;
     height: 39%;
-    color: #090808;
+    color: #25335e;
     margin-left: 2%;
     margin-right: 2%;
     text-align: justify;
@@ -68,7 +71,6 @@ a {
 }
 
 .overview:hover::-webkit-scrollbar-thumb {
-    background-color: #b8a9bc;
     border-radius: 10px;
 }
 
@@ -86,8 +88,8 @@ a {
 .rating_body:before {
     content: "★★★★★★★★★★";
     display: block;
-    color: #5d5d51;
-    text-shadow: 1px 1px 5px #5c9fb2;
+    color: var(--var-list-rating-bg);
+    text-shadow: var(--var-list-rating-shadow);
 }
 .rating_active {
     position: absolute;
@@ -103,7 +105,7 @@ a {
     height: 100%;
     top: 0;
     left: 0;
-    color: rgb(203, 201, 95);
+    color: var(--var-list-stars-color);
 }
 .span {
     width: 100%;
@@ -111,9 +113,8 @@ a {
     flex-direction: column;
     justify-content: space-between;
 }
-.line {
-    color: #5c9fb2;
-    width: 50%;
+
+.release {
+    display: block;
     align-self: center;
-    border: none;
 }

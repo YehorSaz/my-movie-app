@@ -6,3 +6,4 @@ export interface IResult {
     total_pages: number;
     total_results: number;
 }
+

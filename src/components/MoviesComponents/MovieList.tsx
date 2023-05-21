@@ -1,32 +1,51 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
 
-import {useAppSelector} from "../../hooks";
+import {useAppDispatch, useAppSelector} from "../../hooks";
 
 import {MovieListCard} from "./MovieListCard";
 import css from "../../styles/MovieList.module.css";
-import {Paginate} from "../Paginate";
+import {IGetGenre} from "../Paginate";
+import {useLocation} from "react-router-dom";
+import {movieActions} from "../../redux/slice";
 
 
 const MovieList: FC = () => {
 
     const {movies} = useAppSelector(state => state.movieReducer)
 
+
+    const dispatch = useAppDispatch();
+    const {state} = useLocation();
+
+
+    useEffect(() => {
+        if (state !== null) {
+            const payload: IGetGenre = {
+                page: state.page,
+                genresId: state.id
+            }
+            dispatch(movieActions.getGenresById(payload))
+
+        } else {
+            dispatch(movieActions.getAll(1))
+        }
+    }, [dispatch, state]);
+
+
     return (
 
-        <>
-            <Paginate/>
-            <div className={css.container}>
-                <div className={css.movieList}>
 
-                    {
-                        movies.map(movie => <MovieListCard key={movie.id} movie={movie}/>)
-                    }
+        <div className={css.container}>
+            <div className={css.movieList}>
 
-                </div>
+                {
+                    movies.map(movie => <MovieListCard key={movie.id} movie={movie}/>)
 
-            <Paginate/>
+                }
+
             </div>
-        </>
+
+        </div>
     );
 }
 export {MovieList}

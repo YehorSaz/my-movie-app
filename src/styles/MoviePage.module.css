@@ -1,4 +1,7 @@
 .body {
-    background: linear-gradient(183deg, #e0e6fc 0%, #dcedf5 85%);
-
+    background: var(--var-body-bg);
+}
+.paginate_bottom {
+    margin-top: -5%;
+    padding-bottom: 1%;
 }

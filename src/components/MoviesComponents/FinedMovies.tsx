@@ -22,7 +22,7 @@ const FinedMovies: FC<IProps> = ({movie}) => {
 
     return (
 
-        <Link to={`/movies/${id.toString()}`} state={{...movie}} onClick={() => dispatch(movieActions.changeTrigger())}>
+        <Link to={`movies/${id.toString()}`} state={{...movie}} onClick={() => dispatch(movieActions.changeTrigger())}>
 
                 <div className={css.wrapper}>
 

@@ -1,9 +1,58 @@
+:root {
+    --var-body-bg: linear-gradient(179deg, #cdf0ff 0%, #d8ddf1 100%);
+    --var-card-bg: linear-gradient(179deg, #b5ccec 0%, #d8ddf1 100%);
+
+    /*-------MovieListCard----------*/
+    --var-list-shadow-hover: 0 0 7px 8px #b7d0e8;
+    --var-list-title-color: #090808;
+    --var-list-img-shadow: -3px 3px 10px 3px #87a5c0;
+    --var-list-title-shadow: 0 3px 5px #839498;
+    /*-------------Rating-----------   */
+    --var-list-rating-bg: #947b7b;
+    --var-list-rating-shadow: 1px 1px 5px #5c9fb2;
+    --var-list-stars-color: rgb(203, 201, 95);
+
+    /*-------------Header----------    */
+    --var-header-bg: linear-gradient(183deg, #306188 0%, #153752 100%);
+    --var-link-color: blanchedalmond;
+    --var-link-hover-shadow: 2px 0 14px #00E5FF;
+    --var-input-bg: #485e77;
+    --var-input-color: #8bb8dc;
+    --var-input-playsholder: #718494;
+    --var-input-hover-shadow: 2px 3px 8px 2px #113b4f;
+    --var-button-svg-color: #1b3334;
+
+    /*-----------------FinedMovie-----------*/
+    --var-border-bottom: 1px solid #8dcde5;
+    --var-info-shadow: 3px 2px 8px 1px #a7c2e1;
+    --var-img-shadow: 3px 2px 8px 1px #8ca8cc;
+
+
+    /*----------MovieInfo---------*/
+    --var-text-color: #b1d3e3;
+    --var-bg-filter: rgba(0, 0, 0, 0.6);
+    --var-budges-color: #25335e;
+    --var-budge-hover-bg: #44537c;
+    --var-budge-hover-color: #c5cde3;
+    --var-poster-shadow: 0 1px 13px 5px #0f1e25;
+    --var-rating-shadow: 1px 1px 5px #27424b;
+    --var-rating-bg: #000000;
+
+    /*----------Paginate----------*/
+    --var-num-color: #306188;
+    --var-num-active: #204664;
+    --var-paginate-color: #4d60a1;
+    --var-paginate-shadow: 0 3px 5px #798688;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Book Antiqua", serif;
 }
 
 a {
     text-decoration: none;
 }
+

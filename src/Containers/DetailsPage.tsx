@@ -10,17 +10,16 @@ import {MovieInfo} from "../components/MoviesComponents";
 const DetailsPage: FC = () => {
 
     const location = useLocation();
-    console.log(location);
     const backDropPath = location.state.backdrop_path;
 
     const dispatch = useAppDispatch();
 
     useEffect(() => {
         dispatch(movieActions.getById(location.state.id))
-    }, [dispatch]);
+    }, [dispatch, location.state]);
 
-    const {movieDetails} = useAppSelector(state => state.movieReducer)
-
+    const {movieDetails, trigger} = useAppSelector(state => state.movieReducer)
+    console.log(trigger);
     return (
 
         <div>

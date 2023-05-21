@@ -3,10 +3,8 @@
     height: 25%;
     width: 100%;
     margin-bottom: 5px;
-    border-bottom: 1px solid #8dcde5;
     padding-bottom: 13px;
 }
-
 
 .info {
     width: 100%;
@@ -14,15 +12,15 @@
     display: flex;
     flex-direction: column;
     padding: 0 5% 0 2%;
-    color: #504a4a;
+    color: var(--var-list-title-color);
     font-family: "Book Antiqua", serif;
-    box-shadow: 3px 2px 8px 1px #a7c2e1;
+    box-shadow: var(--var-info-shadow);
     border-radius: .3rem;
     gap: 5%;
 }
 .img_fined {
     border-radius: .3rem;
-    box-shadow: 3px 2px 8px 1px #8ca8cc;
+    box-shadow: var(--var-img-shadow);
 }
 .title {
     font-size: 1.3em;
@@ -42,8 +40,8 @@
 .rating_body:before {
     content: "★★★★★★★★★★";
     display: block;
-    color: #5d5d51;
-    text-shadow: 1px 1px 5px #36606c;
+    color: var(--var-list-rating-bg);
+    text-shadow: var(--var-list-rating-shadow);
 }
 .rating_active {
     position: absolute;
@@ -59,5 +57,5 @@
     height: 100%;
     top: 0;
     left: 0;
-    color: rgb(203, 201, 95);
+    color: var(--var-list-stars-color);
 }

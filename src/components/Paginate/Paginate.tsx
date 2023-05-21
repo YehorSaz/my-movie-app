@@ -1,26 +1,46 @@
 import React, {FC, useEffect, useRef} from 'react';
 import ReactPaginate from 'react-paginate';
+
 import css from '../../styles/Paginate.module.css';
-
-import {useAppDispatch} from "../../hooks";
+import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieActions} from "../../redux/slice";
+import {useLocation} from "react-router-dom";
 
 
+
+export interface IGetGenre {
+
+        genresId: any,
+        page: number
+
+}
 const Paginate: FC = () => {
 
+const {state} = useLocation();
+
+    const {total_page} = useAppSelector(state => state.movieReducer)
     const dispatch = useAppDispatch();
     const page = useRef(1);
-    const pageCount = 500;
+    const pageCount = total_page;
+
+
+    useEffect(() => {
+        page.current = 1
+    }, [state]);
+
 
     const handlePageClick = ({selected}: { selected: number }) => {
         page.current = selected + 1;
-        dispatch(movieActions.getAll(page.current))
+        if (state !== null){
+            let payload = {
+                genresId: state.id,
+                page: page.current
+            }
+            dispatch(movieActions.getGenresById(payload))
+        } else {
+            dispatch(movieActions.getAll(page.current))
+        }
     }
-
-    useEffect(() => {
-        dispatch(movieActions.getAll(page.current))
-    }, [dispatch]);
-
 
     return (
 
@@ -29,7 +49,7 @@ const Paginate: FC = () => {
                 breakLabel="..."
                 nextLabel="next"
                 onPageChange={handlePageClick}
-                pageRangeDisplayed={10}
+                pageRangeDisplayed={5}
                 pageCount={pageCount}
                 forcePage={page.current - 1}
                 previousLabel="prev"

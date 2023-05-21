@@ -3,9 +3,129 @@
     height: 93vh;
     background-repeat: no-repeat;
     background-size: cover;
+    color: var(--var-text-color);
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 150px;
 }
 .background_filter {
     height: 93vh;
-    background-color: rgba(53, 76, 101, 0.5);
+    background-color: var(--var-bg-filter);
     background-size: cover;
+}
+.genres {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 18px;
+}
+.genre_item {
+    display: block;
+    width: 120px;
+    background: var(--var-card-bg);
+    border-radius: 0.8rem;
+    text-align: center;
+    color: var(--var-budges-color);
+
+}
+.genre_item:hover {
+    cursor: pointer;
+    color: var(--var-budge-hover-color);
+    background: var(--var-budge-hover-bg);
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 93vh;
+    width: 70vw;
+    justify-content: space-between;
+    padding-bottom: 150px;
+    padding-top: 50px;
+}
+.title_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title {
+    margin-bottom: 50px;
+    font-size: 1.3em;
+}
+.overview {
+    display: block;
+    width: 60%;
+}
+.poster {
+    display: flex;
+    width: 40vw;
+    height: 93vh;
+    padding-top: 2%;
+    perspective: 900px;
+    /*scale: 0.98;*/
+}
+
+.poster_container {
+    width: 500px;
+    height: 750px;
+    display: flex;
+    overflow: hidden;
+    border-radius: .5rem;
+    box-shadow: var(--var-poster-shadow);
+
+    transform: rotateX(2deg) rotateY(25deg);
+    transform-style: preserve-3d;
+}
+
+.ratingD {
+    display: flex;
+    font-size: 2em;
+}
+.rating_bodyD {
+    position: relative;
+}
+.rating_bodyD:before {
+    content: "★★★★★★★★★★";
+    display: block;
+    color: var(--var-rating-bg);
+    text-shadow: var(--var-rating-shadow);
+}
+.rating_activeD {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.rating_activeD:before {
+    content: "★★★★★★★★★★";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: var(--var-list-stars-color);
+}
+.rating_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.overview_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.overview {
+    margin-top: 20px;
+}
+.status {
+    display: flex;
+    gap: 10px;
+    text-decoration: underline;
 }

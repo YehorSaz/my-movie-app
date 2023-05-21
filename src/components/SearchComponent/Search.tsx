@@ -1,4 +1,5 @@
 import React, {FC} from 'react';
+
 import css from '../../styles/Search.module.css';
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieActions} from "../../redux/slice";
@@ -22,7 +23,7 @@ const Search: FC = () => {
                     finedMovies.length ?
                     finedMovies.map(movie => <FinedMovies key={movie.id} movie={movie}/>)
                         :
-                    <div className={css.nothing}>nothing yet...</div>
+                    <div className={css.nothing}>nothing yet... <br/> start typing...</div>
                 }
             </div>
 

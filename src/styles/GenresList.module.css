@@ -1,0 +1,11 @@
+.wrapper {
+    display: grid;
+    justify-content: center;
+}
+
+.genres_name {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2%;
+    margin-top: 1%;
+}

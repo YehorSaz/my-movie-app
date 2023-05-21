@@ -1,32 +1,44 @@
 .Header {
+    /*width: 100vw;*/
     display: flex;
-    background: linear-gradient(183deg, #306188 0%, #153752 100%);
+    background: var(--var-header-bg);
     height: 7vh;
     justify-content: space-between;
     align-items: center;
-    padding: 0 8% 0 8%;
+    padding: 0 100px 0 50px;
 }
 
 .user {
     display: flex;
     justify-content: space-between;
-    width: 9%;
+    width: 150px;
     align-items: center;
 }
+.genres {
+    margin-left: 120px;
+}
+
 .user > svg:hover {
     cursor: pointer;
 }
+
 .img_okten {
     display: block;
     height: 70%;
     margin-right: 3%;
 }
+
+.genres_link {
+    color: var(--var-link-color);
+    margin-left: 50%;
+}
 .text, .user, .genres {
-    color: blanchedalmond;
+    color: var(--var-link-color);
     font-size: 1.7em;
 }
+
 .text:hover, .user:hover, .genres:hover {
-    text-shadow: 2px 0 14px #00E5FF;
+    text-shadow: var(--var-link-hover-shadow);
     cursor: pointer;
 }
 
@@ -35,6 +47,7 @@
     align-items: center;
     height: 100%;
 }
+
 .search {
     display: flex;
     align-items: center;
@@ -42,36 +55,41 @@
     width: 23vw;
     position: relative;
     left: 13%;
+    margin-left: -30px;
 }
+
 .input {
     height: 100%;
     width: 100%;
     border-radius: .7rem;
     border: none;
-    background-color: #485e77;
+    background-color: var(--var-input-bg);
     padding-left: 5%;
-    color: #8bb8dc;
+    color: var(--var-input-color);
     font-size: 1em;
     z-index: 11;
 }
-.input:hover{
-    box-shadow: 2px 3px 8px 2px #113b4f;
+
+.input:hover {
+    box-shadow: var(--var-input-hover-shadow);
 }
+
 .input:active, :hover, :focus {
     outline: 0;
     outline-offset: 0;
 }
+
 ::placeholder {
-    color: #718494;
+    color: var(--var-input-playsholder);
     font-size: 1em;
 }
 
 .button {
     height: 100%;
-    width:calc(25%/2);
+    width: calc(25% / 2);
     border: none;
     border-radius: 25px;
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
     position: relative;
     right: 10%;
     cursor: pointer;
@@ -79,13 +97,16 @@
     scale: 0.8;
     z-index: 11;
 }
+
 .button > svg {
-    color: #1b3334;
-    scale: 3.5;
+    color: var(--var-button-svg-color);
+    scale: 3;
 }
+
 .link {
     width: 30%;
 }
+
 .search_component {
     z-index: 10;
 }

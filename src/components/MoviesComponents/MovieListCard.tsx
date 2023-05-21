@@ -12,13 +12,13 @@ interface IProp {
 
 const MovieListCard: FC<IProp> = ({movie}) => {
 
-    const {title, id, poster_path, overview, vote_count, vote_average} = movie;
+    const {title, id, poster_path, overview, vote_average, release_date} = movie;
 
 
     return (
 
 
-        <Link to={id.toString()} state={{...movie}}>
+        <Link to={`/${title}/${id.toString()}`} state={{...movie}}>
             <div className={css.Movie}>
 
                 <div className={css.inner}>
@@ -41,8 +41,10 @@ const MovieListCard: FC<IProp> = ({movie}) => {
                                 <div className={css.rating_body}>
                                     <div className={css.rating_active} style={{width: vote_average / 0.1 + '%' }}></div>
                                 </div>
+
                             </div>
-                            <hr className={css.line}/>
+                            <div className={css.release}>{release_date}</div>
+
                     <div className={css.overview}>
                         {overview}
                     </div>

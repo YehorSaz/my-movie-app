@@ -1,0 +1,26 @@
+.body {
+    height: 100%;
+    background: var(--var-body-bg);
+}
+.paginate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.paginate_numbers {
+    display: block;
+}
+.name {
+    position: absolute;
+    top: 20%;
+    left: 9%;
+    display: block;
+    width: 10vw;
+    height: 10vh;
+    /*padding-left: 200px;*/
+    /*padding-top: 55px;*/
+    text-shadow: var(--var-paginate-shadow);
+    color: var(--var-paginate-color);
+    z-index: 5;
+    text-decoration: underline;
+}

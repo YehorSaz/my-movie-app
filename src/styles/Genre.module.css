@@ -1,0 +1,11 @@
+.name {
+    width: 10vw;
+    font-size: 1.2em;
+    font-family: "Book Antiqua", serif;
+    color: #25335e;
+}
+.name:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    text-shadow: 0 3px 5px #839498;
+}

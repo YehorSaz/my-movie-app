@@ -2,19 +2,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
     width: 50%;
     padding-top: 3%;
-    color: #306188;
+    margin: 0 auto 0;
+    color: var(--var-num-color);
 }
 
 .items {
     display: block;
-    border-radius: 20px;
     font-size: 2em;
     cursor: pointer;
     margin: 0 15% 0 15%;
-
+}
+.items:hover {
+    text-decoration: underline;
 }
 
 li {
@@ -23,23 +24,23 @@ li {
 
 .active {
     font-size: 1.3em;
-    color: #204664;
-    text-decoration: underline #204664;
+    color: var(--var-num-active);
+    text-decoration: underline var(--var-num-active);
 }
 
 .prev, .next {
     font-size: 1.6em;
-    color: #306188;
+    color: var(--var-num-color);
 
 }
 
 .next:hover {
     cursor: pointer;
-    color: #204664;
+    color: var(--var-num-active);
     text-decoration: underline;
 }
 .prev:hover {
     cursor: pointer;
-    color: #204664;
+    color: var(--var-num-active);
     text-decoration: underline;
 }
