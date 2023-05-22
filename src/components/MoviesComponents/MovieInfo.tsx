@@ -20,7 +20,6 @@ const MovieInfo: FC<IProps> = ({movieDetails}) => {
 
     const dispatch = useAppDispatch();
     const {
-        original_title,
         overview,
         poster_path,
         genres,
@@ -53,9 +52,7 @@ const MovieInfo: FC<IProps> = ({movieDetails}) => {
 
                     <div className={css.poster}>
 
-                        <div className={css.poster_container}>
-                            <Link to={`/${original_title.toString()}`}><img src={getPoster + poster_path} alt="poster"/></Link>
-                        </div>
+                            <img className={css.img} src={getPoster + poster_path} alt="poster"/>
 
                     </div>
 
