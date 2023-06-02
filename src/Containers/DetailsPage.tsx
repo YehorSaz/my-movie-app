@@ -21,7 +21,7 @@ const DetailsPage: FC = () => {
 
         axios({
             method: "post",
-            url: "https://my-movie-app-beta.vercel.app/api",
+            url: "https://my-movie-app-rose.vercel.app/api",
             withCredentials: false,
             headers: {
                 "Access-Control-Allow-Origin": "*",
