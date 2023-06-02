@@ -20,12 +20,12 @@ const DetailsPage: FC = () => {
         dispatch(movieActions.getById(location.state.id))
 
         axios({
-            method: 'post',
-            url: 'http://localhost:3001/api',
+            method: "post",
+            url: "https://my-movie-app-beta.vercel.app/api",
             withCredentials: false,
             headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
             },
             data: {
                 movieId: location.state.original_title
