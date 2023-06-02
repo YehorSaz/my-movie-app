@@ -18,7 +18,7 @@ app.listen(PORT, () => {
     console.log('Work!!!')
 })
 const movieId = [];
-app.post('/api', async (req, res) => {
+app.post('https://my-movie-yehorsaz.vercel.app/api', async (req, res) => {
     res.setHeader("access-control-allow-credentials", "false");
     res.setHeader( "Access-Control-Allow-Origin", "*");
 if (movieId.length > 0) {
