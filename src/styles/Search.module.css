@@ -3,7 +3,7 @@
     width: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     position: fixed;
-    top: 0;
+    top: 7vh;
     left: 0;
     z-index: 15;
     display: flex;

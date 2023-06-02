@@ -6,6 +6,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     color: var(--var-text-color);
+    margin-top: 7vh;
 }
 
 .poster {
@@ -132,3 +133,13 @@
     gap: 10px;
     text-decoration: underline;
 }
+
+.loading {
+    display: block;
+    width: 400px;
+    height: 600px;
+    background: gold;
+    
+}
+
+
