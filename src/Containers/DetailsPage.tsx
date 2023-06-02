@@ -24,7 +24,7 @@ const DetailsPage: FC = () => {
             url: "https://my-movie-app-rose.vercel.app/api",
             withCredentials: false,
             headers: {
-                "Access-Control-Allow-Origin": "https://my-movie-app-rose.vercel.app",
+                "Access-Control-Allow-Origin": "https://my-movie-app-yehorsaz.vercel.app/",
                 "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
             },
             data: {
