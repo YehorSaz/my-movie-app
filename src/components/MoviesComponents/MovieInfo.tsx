@@ -42,7 +42,7 @@ const MovieInfo: FC<IProps> = ({movieDetails, lnk}) => {
     return (
 
         <>
-            {loading === true ? <h1 className={css.loading}>loading...</h1> :
+
                 <div className={css.wrapper}
                      style={backdrop_path ? {backgroundImage: `url(${getBackDrop + backdrop_path})`} :
                          {backgroundImage: `url(${getBackDrop + poster_path})`}}>
@@ -97,7 +97,7 @@ const MovieInfo: FC<IProps> = ({movieDetails, lnk}) => {
 
                                 <div className={css.video} style={{background: getPoster + poster_path}}>
 
-                                    <iframe width="560" height="315" className={css.iframe}
+                                    <iframe width="315" height="185" className={css.iframe}
                                             src={video[0] ? `https://www.youtube.com/embed/${video[0].key}` : getPoster + poster_path}
                                             scrolling="no"
                                             title="YouTube video player"
@@ -109,8 +109,8 @@ const MovieInfo: FC<IProps> = ({movieDetails, lnk}) => {
                                     {
                                         lnk && (
                                             <iframe id="pre" width="560" height="315" className={css.iframe}
-                                                    src={lnk[1]}
-                                                    frameBorder="0" allowFullScreen>
+                                                    src={lnk[1] || `https://www.youtube.com/embed/${lnk[1]}`}
+                                                    title={'movie player'} allowFullScreen>
 
                                             </iframe>
                                         )
@@ -132,7 +132,7 @@ const MovieInfo: FC<IProps> = ({movieDetails, lnk}) => {
 
                     </div>
                     <PosterPreview poster={poster_path}/>
-                </div>}
+                </div>
         </>
     );
 };
