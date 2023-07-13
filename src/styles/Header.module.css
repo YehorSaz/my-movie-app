@@ -5,9 +5,6 @@
     justify-content: center;
     height: 7vh;
     background: var(--var-header-bg);
-    position: fixed;
-    top: 0;
-    z-index: 5;
 }
 
 .header_left {
@@ -136,7 +133,7 @@
 
 /**************************************************************************************/
 
-@media (max-width: 900px) {
+@media (max-width: 450px) {
     .header {
         width: 100vw;
         box-sizing: border-box;

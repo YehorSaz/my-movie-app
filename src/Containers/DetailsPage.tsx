@@ -14,23 +14,23 @@ const DetailsPage: FC = () => {
 
     const dispatch = useAppDispatch();
 
-    const [lnk, setLnk] = useState();
+    // const [lnk, setLnk] = useState();
 
     useEffect(() => {
         dispatch(movieActions.getById(location.state.id))
 
-        axios({
-            method: "post",
-            url: "https://movie-app-back-eight.vercel.app/api",
-            withCredentials: false,
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-            },
-            data: {
-                movieId: location.state.original_title
-            }
-        }).then(resp => resp.data).then(resp => setLnk(resp.movieId));
+        // axios({
+        //     method: "post",
+        //     url: "https://movie-app-back-eight.vercel.app/api",
+        //     withCredentials: false,
+        //     headers: {
+        //         "Access-Control-Allow-Origin": "*",
+        //         "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        //     },
+        //     data: {
+        //         movieId: location.state.original_title
+        //     }
+        // }).then(resp => resp.data).then(resp => setLnk(resp.movieId));
 
     }, [dispatch, location.state]);
 
@@ -41,11 +41,12 @@ const DetailsPage: FC = () => {
         <div>
             {
                 movieDetails && (
-                    <MovieInfo movieDetails={movieDetails} backDropPath={backDropPath} lnk={lnk}/>
+                    <MovieInfo movieDetails={movieDetails} backDropPath={backDropPath}/>
                 )
             }
         </div>
     );
 };
+
 
 export {DetailsPage}
