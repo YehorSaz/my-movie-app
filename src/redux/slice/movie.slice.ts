@@ -6,6 +6,7 @@ import {IGetGenre} from "../../components/Paginate";
 import {IVideo, IVideoRes} from "../../interfaces/Video.interface";
 
 
+
 interface IState {
     movies: IMovie[];
     errors: IError;
@@ -14,18 +15,20 @@ interface IState {
     trigger: boolean,
     genres: IGenres[],
     total_page: number,
-    video: IVideoRes[]
+    video: IVideoRes[],
+    loading: boolean
 }
 
 const initialState: IState = {
     movies: [],
-    errors: {},
+    errors: null,
     movieDetails: null,
     finedMovies: [],
     trigger: false,
     genres: [],
     total_page: 0,
-    video: []
+    video: [],
+    loading: false
 };
 
 const getVideos = createAsyncThunk<IVideo, number>(
@@ -136,7 +139,12 @@ const slice = createSlice({
                 state.total_page = action.payload.total_pages
             })
             .addCase(getVideos.fulfilled, (state, action) => {
+                state.loading = false
                 state.video = action.payload.results
+            })
+            .addCase(getVideos.pending, (state) => {
+                state.loading = true
+                state.errors = null
             })
             .addMatcher(isRejectedWithValue(), (state, action) => {
                 state.errors = action.payload

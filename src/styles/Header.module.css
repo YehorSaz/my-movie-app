@@ -5,6 +5,9 @@
     justify-content: center;
     height: 7vh;
     background: var(--var-header-bg);
+    position: fixed;
+    top: 0;
+    z-index: 5;
 }
 
 .header_left {
