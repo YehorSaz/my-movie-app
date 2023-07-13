@@ -5,3 +5,13 @@
     margin-top: -5%;
     padding-bottom: 1%;
 }
+
+@media (max-width: 450px) {
+    .paginate_bottom {
+        margin-top: -5%;
+        padding-bottom: 1%;
+        /*margin-top: -100px;*/
+        position: relative;
+        bottom: 130px;
+    }
+}

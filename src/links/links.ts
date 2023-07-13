@@ -1,4 +1,5 @@
 export const links = [
+    {title: "Людина-мураха та Оса: Квантоманія", link: "https://ashdi.vip/vod/91332"},
     {title: "Смертельна битва. Легенди. Помста Скорпіона", link: "https://ashdi.vip/vod/18555"},
     {title: "Евакуація 2", link: "https://ashdi.vip/vod/95481"},
     {title: "Розлом Сан-Андреас", link: "https://ashdi.vip/vod/9507"},
