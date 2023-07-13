@@ -51,6 +51,7 @@ const Paginate: FC = () => {
         <>
             <ReactPaginate
                 breakLabel="..."
+                breakClassName={css.break}
                 nextLabel="next"
                 onPageChange={handlePageClick}
                 pageRangeDisplayed={5}

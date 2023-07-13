@@ -30,3 +30,23 @@
     position: relative;
     bottom: 60px;
 }
+
+@media (max-width: 900px) {
+    .bottom {
+        position: relative;
+        bottom: 140px;
+    }
+    .name {
+        position: absolute;
+        top: 60px;
+        /*left: 135px;*/
+
+        display: block;
+        width: 10vw;
+        height: 10vh;
+        text-shadow: var(--var-paginate-shadow);
+        color: var(--var-paginate-color);
+        z-index: 5;
+        text-decoration: underline;
+    }
+}

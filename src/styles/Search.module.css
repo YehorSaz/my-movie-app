@@ -50,3 +50,32 @@
     font-size: 2em;
     color: #306188;
 }
+
+@media (max-width: 900px) {
+    .Search {
+        /*height: 100%;*/
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 0.6);
+        /*position: fixed;*/
+        /*top: 0;*/
+        /*left: 0;*/
+        z-index: 15;
+        display: flex;
+        /*justify-content: center;*/
+        /*align-items: center;*/
+        animation: none;
+    }
+    .content {
+        padding: 10px;
+        border-radius: .5rem;
+        background: var(--var-body-bg);
+        width: 80%;
+        height: 60vh;
+        overflow-y: scroll;
+        z-index: 12;
+        transition: 1s;
+        position: relative;
+        /*bottom: 600px;*/
+    }
+
+}

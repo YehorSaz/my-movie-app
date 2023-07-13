@@ -50,3 +50,12 @@
 .wrapper:hover {
     cursor: zoom-in;
 }
+
+@media (max-width: 900px) {
+    .poster_preview {
+        display: none;
+    }
+    .wrapper {
+        display: none;
+    }
+}

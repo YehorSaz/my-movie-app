@@ -8,6 +8,8 @@ import {PosterPreview} from "../PosterPreview";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieActions} from "../../redux/slice";
 
+import {links} from "../../links/links"
+
 
 interface IProps {
     movieDetails: IMovieDetails;
@@ -18,8 +20,10 @@ const MovieInfo: FC<IProps> = ({movieDetails}) => {
 
     const {video} = useAppSelector(state => state.movieReducer);
 
+
     const dispatch = useAppDispatch();
     const {
+        original_title,
         overview,
         poster_path,
         genres,
@@ -41,6 +45,17 @@ const MovieInfo: FC<IProps> = ({movieDetails}) => {
     }, [dispatch, id]);
 
 
+    let movie_link;
+    const searchTerm = title.toString()
+    for (let i = 0; i < links.length; i++) {
+        if (links[i].title === searchTerm) {
+            movie_link = links[i].link.toString();
+            break
+        }
+    }
+    console.log(movie_link)
+
+
     return (
 
         <div className={css.wrapper} style={backdrop_path ? {backgroundImage: `url(${getBackDrop + backdrop_path})`} :
@@ -52,7 +67,7 @@ const MovieInfo: FC<IProps> = ({movieDetails}) => {
 
                     <div className={css.poster}>
 
-                            <img className={css.img} src={getPoster + poster_path} alt="poster"/>
+                        <img className={css.img} src={getPoster + poster_path} alt="poster"/>
 
                     </div>
 
@@ -65,7 +80,8 @@ const MovieInfo: FC<IProps> = ({movieDetails}) => {
 
                         <div className={css.video}>
                             <iframe width="560" height="315"
-                                    src={video[0] ? `https://www.youtube.com/embed/${video[0].key}` : getPoster + poster_path}
+                                // src={video[0] ? `https://www.youtube.com/embed/${video[0].key}` : getPoster + poster_path}
+                                    src={movie_link ? movie_link : getPoster + poster_path}
                                     title="YouTube video player"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowFullScreen></iframe>

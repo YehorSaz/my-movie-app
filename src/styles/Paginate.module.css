@@ -45,3 +45,18 @@ li {
     color: var(--var-num-active);
     text-decoration: underline;
 }
+
+@media (max-width: 900px) {
+    .items {
+        display: none;
+    }
+    .active {
+        display: none;
+    }
+    .items > li > breack{
+        display: none;
+    }
+    .break {
+        display: none;
+    }
+}
