@@ -34,14 +34,14 @@ const Header: FC = () => {
     }
 
     const HandleChange = (isChecked: boolean) => {
-        if (isChecked) {
-            document.body.setAttribute('dark', '');
-            document.body.removeAttribute('dark');
-            localStorage.setItem('theme', 'light');
-        } else {
+        if (!isChecked) {
             document.body.setAttribute('dark', '');
             document.body.removeAttribute('light');
-            localStorage.setItem('theme', 'dark')
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.setAttribute('light', '');
+            document.body.removeAttribute('dark');
+            localStorage.setItem('theme', 'light')
         }
     }
 
