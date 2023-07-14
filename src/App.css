@@ -1,5 +1,5 @@
 
-:root {
+[light] {
 
 
     --var-body-bg: linear-gradient(179deg, #cdf0ff 0%, #d8ddf1 100%);
@@ -50,7 +50,7 @@
 
 
 
-[dark] {
+:root {
     --var-body-bg: linear-gradient(179deg, #021d2c 0%, #2c2c31 100%);
     --var-card-bg: linear-gradient(179deg, #9cabc5 0%, #8e8e9b 100%);
 
