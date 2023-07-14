@@ -205,5 +205,8 @@
         display: block;
         width: 90%;
     }
+    .overview_container {
+        margin-bottom: 10px;
+    }
 
 }
