@@ -36,13 +36,13 @@ const Header: FC = () => {
     const HandleChange = (isChecked: boolean) => {
         localStorage.setItem('theme', 'dark')
         if (isChecked) {
-            document.body.setAttribute('light', '');
-            document.body.removeAttribute('dark');
-            localStorage.setItem('theme', 'light');
-        } else {
             document.body.setAttribute('dark', '');
             document.body.removeAttribute('light');
-            localStorage.setItem('theme', 'dark')
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.setAttribute('light', '');
+            document.body.removeAttribute('dark');
+            localStorage.setItem('theme', 'light')
         }
     }
 
