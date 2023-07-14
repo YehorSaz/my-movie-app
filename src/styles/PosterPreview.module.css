@@ -51,7 +51,7 @@
     cursor: zoom-in;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 900px) {
     .poster_preview {
         display: none;
     }
