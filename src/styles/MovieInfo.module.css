@@ -143,6 +143,9 @@
         color: var(--var-text-color);
 
     }
+    .rating_container {
+        display: none;
+    }
     .content {
         display: flex;
         flex-direction: column;
