@@ -35,7 +35,7 @@ const Header: FC = () => {
 
     const HandleChange = (isChecked: boolean) => {
         if (isChecked) {
-            document.body.setAttribute('light', '');
+            document.body.setAttribute('dark', '');
             document.body.removeAttribute('dark');
             localStorage.setItem('theme', 'light');
         } else {
