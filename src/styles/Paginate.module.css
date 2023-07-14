@@ -46,10 +46,10 @@ li {
     text-decoration: underline;
 }
 
-@media (max-width: 900px) {
-    /*.items {*/
-    /*    display: none;*/
-    /*}*/
+@media (max-width: 800px) {
+    .items {
+        display: none;
+    }
     .active {
         display: none;
     }
