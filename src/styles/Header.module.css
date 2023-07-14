@@ -138,7 +138,9 @@
     }
 }
 @media (max-width: 900px) {
-    
+    .Header {
+        height: 8vh;
+    }
 
     .header_left {
         display: block;
