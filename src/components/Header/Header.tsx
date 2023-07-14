@@ -77,7 +77,7 @@ const Header: FC = () => {
 
             <div className={css.search}>
 
-                <input className={css.input} id={'search'} type="text" placeholder={'find movie...'} required={true}
+                <input className={css.input} id={'search'} type="text" autoComplete="off" placeholder={'find movie...'} required={true}
                        onClick={() => {
                            dispatch(movieActions.changeTrigger())
                            clear()
