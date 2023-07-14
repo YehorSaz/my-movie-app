@@ -47,9 +47,9 @@ li {
 }
 
 @media (max-width: 900px) {
-    .items {
-        display: none;
-    }
+    /*.items {*/
+    /*    display: none;*/
+    /*}*/
     .active {
         display: none;
     }

@@ -136,8 +136,11 @@
     .Header {
         height: 18vh;
     }
+    .user {
+        display: none;
+    }
 }
-@media (max-width: 900px) {
+@media (max-width: 499px) {
     .Header {
         height: 8vh;
     }
