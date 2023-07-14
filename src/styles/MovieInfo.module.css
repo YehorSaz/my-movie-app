@@ -138,8 +138,8 @@
     .wrapper {
         width: 100vw;
         /*height: 100%;*/
-        /*min-height: 780px;*/
-        /*min-width: 1300px;*/
+        min-height: 800px;
+        min-width: 320px;
         background-repeat: no-repeat;
         background-size: cover;
         color: var(--var-text-color);
@@ -192,7 +192,18 @@
     .title {
         margin-top: -50px;
         /*margin-bottom: 170px;*/
-        font-size: 1em;
+        font-size: 14px;
+    }
+    .background_filter {
+        height: 100%;
+        min-height: 800px;
+        min-width: 320px;
+        background-color: var(--var-bg-filter);
+        background-size: cover;
+    }
+    .overview {
+        display: block;
+        width: 90%;
     }
 
 }
