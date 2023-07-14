@@ -132,12 +132,13 @@
 }
 
 /**************************************************************************************/
-
-@media (max-width: 450px) {
-    .header {
-        width: 100vw;
-        box-sizing: border-box;
+@media (min-width: 500px) {
+    .Header {
+        height: 18vh;
     }
+}
+@media (max-width: 900px) {
+    
 
     .header_left {
         display: block;
